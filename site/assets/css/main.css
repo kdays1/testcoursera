@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+}
+h1{
+    font-family: 'Lobster', cursive;
+    font-size: 65px;
+    text-align: center;
+}
+span{
+    position: relative;
+    margin-left: -1px;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    border: 1px solid black;
+    float: right;
+}
+p{
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 20px;
+    clear: right;
+}
+.yellow{
+    background-color: rgb(230, 230, 112);
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: rgb(80, 80, 212);
+}
+div{
+    margin-left: 10px;
+    width: 40%;
+    margin-top: 10px;
+}
+/*Responsive Framework*/
+.row {
+    width: 100%;
+}
+
+/*Large Devices*/
+@media (min-width: 992px){
+    .col-lg
+    {
+        float: left;
+        border: 1px solid black;
+    }
+    .col-lg{
+        width: 31.5%;
+    }
+    
+}
+
+/*Medium Devices*/
+@media (min-width: 768px) and (max-width:991px ){
+    .col-md,.col-md-11
+    {
+        float: left;
+        border: 1px solid black;
+    }
+    .col-md{
+        width: 45%;
+    }
+    .col-md-11 {
+        width: 91.66%;
+    }
+}
+
+/*Small Devices*/
+@media (min-width:0px) and (max-width:767px ){
+    .col-sm-12
+    {
+        float: center;
+        border: 1px solid black;
+    }
+    .col-sm-12 {
+        width: 92%;
+    }
+}
