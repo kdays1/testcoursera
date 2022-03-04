@@ -1,0 +1,44 @@
+h2, h3{
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+}
+.container-fluid{
+    background-color: bisque;
+}
+#header-nav{
+    border-radius: 0;
+    border: 0;
+}
+#logo-img{
+    background: url('../images/logo2.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 10px 15px 10px 0px;
+}
+.navbar-header{
+    clear: both;
+}
+.navbar-brand h1{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+    color: rgb(50, 204, 153);
+}
+.nav-list{
+    margin-top: 10px;
+
+}
+.menu{
+    padding: 10px;
+    margin:10px;
+}
+.menu__sushi{
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(50, 204, 153);
+}
+.menu__sushi__title{
+    vertical-align: top;
+}
