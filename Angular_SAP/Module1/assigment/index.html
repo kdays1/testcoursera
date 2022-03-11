@@ -1,18 +1,19 @@
 <!doctype html>
 <html lang="en" ng-app="LunchCheck">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <script src="./angular/angular.min.js"></script>
     <script src="./angular/app.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunch Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
   </head>
 <body>
-   <div class="container">
+   <div class="container" ng-controller="LunchCheckController">
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
