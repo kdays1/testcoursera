@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='ShoppingListCheckOff'>
+<head>
+    <meta charset="UTF-8">
+    <script src="./assets/js/angular.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>ShoppingList Checker</title>
+</head>
+<body>
+    <h1>Shopping List Checker</h1>
+    <section class="container">
+        <section class="tobuy" ng-controller="ToBuyController as showme">
+            <h2>Items to buy:</h2>
+            <ul>
+                <li ng-repeat="item in showme.buyList">Buy {{item.quantity}} {{item.name}} <button type="button" ng-click="showme.buyItem($index)">Buy it</button></li>
+            </ul>
+            <p ng-if="showme.buyList.length==0">You have bought everything! (:</p>
+        </section>
+        <section class="bought" ng-controller="AlreadyBoughtController as buying">
+            <h2> Items bought:</h2>
+            <ul>
+                <li ng-repeat="item in buying.boughtList">Bought: {{item.quantity}} {{item.name}}</li></li>
+            </ul>
+            <p ng-if="buying.boughtList.length==0">Nothing bought yet ):</p>
+        </section>
+    </section>
+</body>
+</html>
