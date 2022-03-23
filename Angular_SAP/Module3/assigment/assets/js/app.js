@@ -1,33 +1,79 @@
-<!doctype html>
-<html lang="en" ng-app="NarrowItDownApp">
-<head>
-    <script src="./assets/js/angular.js"></script>
-    <script src="./assets/js/app.js"></script>
-    <title>Narrow Down Your Menu Choice</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./assets/css/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/styles/styles.css">
-</head>
-<body>
-    <div class="container" ng-controller="NarrowItDownController as narrowit">
-    <h1>Narrow Down Your Chinese Menu Choice</h1>
-    <section>
-        <div class="form-group">
-            <input type="text" placeholder="search term" class="form-control" ng-model="narrowit.searchItem">
-        </div>
-        <div class="form-group narrow-button">
-            <button class="btn btn-primary" ng-click="narrowit.getMMenuItems(narrowit.searchItem)">Narrow It Down For Me!</button>
-        </div>
-        <br><br><br>
+(function () {
+    'use strict';
 
-        <!-- found-items should be implemented as a component -->
-<!---------->
-        <found-items found="narrowit.result"></found-items>
-        <!-- <found-items found-items="narrowit.result"></found-items> -->
-<!---------->
-    </div>
-    </section>
+    angular.module('NarrowItDownApp',[])
+    .controller('NarrowItDownController', NarrowItDownController)
+    .service('MenuSearchService',MenuSearchService)
+    .directive('foundItems', FoundItems);
+
+    function FoundItems(){
+        var ddo = {
+            //restrict: 'E',
+            templateUrl: 'assets/pages/foundITems1.html',
+            scope: {
+//----------->
+                found: '<'
+                // result: '<'
+//<-----------
+                //onremove: '<'
+            },
+            controller: NarrowItDownController,
+            controllerAs: 'narrowit',
+            bindToController: true
+        };
+        return ddo;
+    }
+
+    NarrowItDownController.$inject = ['MenuSearchService'];
+    function NarrowItDownController(MenuSearchService) {
+        var narrowit = this;
+        narrowit.searchItem ='';
+        //narrowit.result = [];
+        narrowit.getMMenuItems = function(searchItem){
+
+            var promise = MenuSearchService.getMatchedMenuItems(searchItem);
+
+            promise.then (function (founds){
+                if(founds.lenght!=0){
+                    narrowit.result = founds;
+                    console.log(narrowit.result);
+                } else {
+                    narrowit.result = '';
+                }
+            });
+        };
+    }
+
+    MenuSearchService.$inject = ['$http'];
+    function MenuSearchService($http){
+        var search = this;
+        search.getMatchedMenuItems = function (searchItem) {
+//----------->
+          console.log(searchItem.toLowerCase());
+//<----------
+            return $http({
+                method: "GET",
+                url: "https://davids-restaurant.herokuapp.com/menu_items.json"
+            }).then (function (result){
+                var found = [];
+                console.log(result.data['menu_items']);
+                console.log(result.data['menu_items'].length);
+                for (var i = 0; i < result.data['menu_items'].length; i++){
+//----------->
+                    // if (result.data['menu_items'][i]['description'].toLowerCase().indexOf(searchItem)!=(-1)){
+                    if (result.data['menu_items'][i]['description'].toLowerCase().indexOf(searchItem.toLowerCase())!=(-1)){
+//<----------
+                        var item = result.data['menu_items'][i];
+                        console.log(item);
+                        found.push(item);
+                        }
+                }
+                console.log("found:",found);
+                return found;
+            });
+        };
+    }
 
 
-</body>
-</html>
+
+}) ();
