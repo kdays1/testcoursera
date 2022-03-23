@@ -11,11 +11,8 @@
             //restrict: 'E',
             templateUrl: 'assets/pages/foundITems1.html',
             scope: {
-//----------->
-                found: '<'
-                // result: '<'
-//<-----------
-                //onremove: '<'
+                found: '<',
+                onremove: '&'
             },
             controller: NarrowItDownController,
             controllerAs: 'narrowit',
@@ -41,6 +38,9 @@
                     narrowit.result = '';
                 }
             });
+            narrowit.onremove = function (itemIndex) {
+                narrowit.result.splice(itemIndex,1);
+            }
         };
     }
 
