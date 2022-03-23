@@ -26,6 +26,8 @@
     function NarrowItDownController(MenuSearchService) {
         var narrowit = this;
         narrowit.searchItem ='';
+        narrowit.wasfound = false;
+        narrowit.wasnotfound = false;
         //narrowit.result = [];
         narrowit.getMMenuItems = function(searchItem){
 
@@ -36,8 +38,10 @@
                     narrowit.result = founds;
                     console.log(narrowit.result);
                     narrowit.wasfound = true;
+                    narrowit.wasnotfound = false;
                 } else {
                     narrowit.result = '';
+                    narrowit.wasnotfound = true;
                     narrowit.wasfound = false;
                 }
             });
