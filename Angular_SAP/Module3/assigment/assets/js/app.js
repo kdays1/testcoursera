@@ -28,9 +28,10 @@
         narrowit.getMMenuItems = function(searchItem){
             var promise = MenuSearchService.getMatchedMenuItems(searchItem);
 
-            promise.then (function (found){
+            promise.then (function (founds){
+                console.log(founds.length);
                 if(found.lenght!=0){
-                    narrowit.result = found;
+                    narrowit.result = founds;
                 } else {
                     narrowit.result = 'Nothing was found';
                 }
@@ -57,8 +58,8 @@
                         found.push(item);
                         }
                 }
-                return found;
                 console.log(found);
+                return found;
             });
         };
     }
