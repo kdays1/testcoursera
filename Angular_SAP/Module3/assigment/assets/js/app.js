@@ -17,7 +17,7 @@
             promise.then (function (founds){
                 if(founds.lenght!=0){
                     narrowit.items = founds;
-                    console.log(narrowit.result);
+                    console.log(narrowit.items);
                 } else {
                     narrowit.items = '';
                 }
