@@ -11,7 +11,7 @@
             restrict: 'E',
             templateUrl: './foundITems1.html',
             scope: {
-                result: '<',
+                found: '<',
                 //onremove: '<'
             },
             controller: NarrowItDownController,
