@@ -11,13 +11,14 @@
             //restrict: 'E',
             templateUrl: './assets/pages/foundITems1.html',
             scope: {
-                narrowit: 'narrowit',
-                found: '<found'
+                result: '<'
                 //onremove: '<'
             },
-
+            controller: NarrowItDownController,
+            controllerAs: 'narrowit',
+            bindToController: true
         };
-        console.log(found);
+        console.log(result);
         return ddo;
     }
 
