@@ -52,7 +52,7 @@
 
     function FoundItems(){
         var ddo = {
-            //restrict: 'E',
+            restrict: 'E',
             templateUrl: './assets/pages/foundITems1.html',
             scope: {
                 items: '<'
@@ -62,7 +62,6 @@
             controllerAs: 'narrowit',
             bindToController: true
         };
-        console.log(items);
         return ddo;
     }
 
