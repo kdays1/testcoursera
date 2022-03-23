@@ -7,11 +7,12 @@
     .directive('foundItems', FoundItems);
 
     function FoundItems(){
+        console.log(found);
         var ddo = {
             restrict: 'E',
             templateUrl: './assets/pages/foundITems1.html',
             scope: {
-                found: '<',
+                found: '<found',
                 //onremove: '<'
             },
             controller: NarrowItDownController,
