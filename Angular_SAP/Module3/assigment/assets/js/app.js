@@ -50,9 +50,11 @@
                 var found = {};
                 console.log(menu_items);
                 for (var i=0; i<result.data['menu_items'].lenght;i++){
-                    var lookingup = menu_items[i]['description'].toLowerCase();
+                    var lookingup = result.data[i]['description'].toLowerCase();
+                    console.log(lookingup);
                     if (lookingup.indexOf(searchItem)!=(-1)){
                         var item = menu_items[i];
+                        console.log(item);
                         found.push(item);
                         }
                 }
