@@ -49,7 +49,7 @@
                 var menu_items = result.data;
                 var found = {};
                 console.log(menu_items);
-                console.log(menu_items.lenght);
+                console.log(result.data.lenght);
                 for (var i=0; i<result.data.lenght;i++){
                     var lookingup = result.data['description'].toLowerCase();
                     console.log(lookingup);
