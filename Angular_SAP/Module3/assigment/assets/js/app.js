@@ -28,9 +28,9 @@
         narrowit.getMMenuItems = function(searchItem){
             var promise = MenuSearchService.getMatchedMenuItems(searchItem);
 
-            promise.then (function (result){
-                if(result.lenght!=0){
-                    narrowit.result = result;
+            promise.then (function (found){
+                if(found.lenght!=0){
+                    narrowit.result = found;
                 } else {
                     narrowit.result = 'Nothing was found';
                 }
@@ -51,7 +51,6 @@
                 console.log(result.data['menu_items']);
                 console.log(result.data['menu_items'].length);
                 for (var i = 0; i < result.data['menu_items'].length; i++){
-                    console.log();
                     if (result.data['menu_items'][i]['description'].toLowerCase().indexOf(searchItem)!=(-1)){
                         var item = result.data['menu_items'][i];
                         console.log(item);
@@ -59,6 +58,7 @@
                         }
                 }
                 return found;
+                console.log(found);
             });
         };
     }
