@@ -6,33 +6,23 @@
     .service('MenuSearchService',MenuSearchService)
     .directive('foundItems', foundItems);
 
-    function foundItems(){
-        var ddo = {
-            templateUrl: 'foundITems.html',
-            scope: {
-                found: '<getMatchedMenuItems',
-                //onremove: '<'
-            },
-            controller: NarrowItDownController,
-            controllerAs: narrowit,
-            bindToController: true
-        };
-        return ddo;
-    }
-
-    function foundITemsController(){
-        var narrowit = this;
-
-    }
-
-    NarrowItDownController.$inject = ['$scope','MenuSearchService'];
+    NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
         var narrowit = this;
-        $scope.searchItem = "";
-        narrowit.getMatchedMenuItems = MenuSearchService.getMatchedMenuItems(searchItem);
+        narrowit.searchItem ='';
+        narrowit.getMMenuItems = function(searchItem){
+            var promise = MenuSearchService.getMatchedMenuItems(searchItem);
+
+            promise.then (function (result){
+                if(result.lenght!=0){
+                    
+                }
+            });
+        }        
     }
 
-    function MenuSearchService(searchItem){
+    MenuSearchService.$inject = ['$http'];
+    function MenuSearchService($http){
         var search = this;
         search.getMatchedMenuItems = function (searchItem) {
             return $http({
@@ -42,7 +32,7 @@
                 menu_items = result.data;
                 var found = {};
                 for (i=0; i<menu_items.lenght;i++){
-                    var lookingup = menu_items.description[i].toLowerCase()
+                    var lookingup = menu_items['description'][i].toLowerCase()
                     if (lookingup.indexOf(searchItem)!=(-1)){
                         var item = menu_items[i];
                         found.push(item);
@@ -51,6 +41,20 @@
                 return found;
             });
         }
+    }
+
+    function foundItems(){
+        var ddo = {
+            templateUrl: 'foundITems.html',
+            scope: {
+                result: '<',
+                //onremove: '<'
+            },
+            controller: NarrowItDownController,
+            controllerAs: 'narrowit',
+            bindToController: true
+        };
+        return ddo;
     }
 
 
