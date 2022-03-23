@@ -9,7 +9,7 @@
     function FoundItems(){
         var ddo = {
             restrict: 'E',
-            templateUrl: './foundITems1.html',
+            templateUrl: './assets/pages/foundITems1.html',
             scope: {
                 found: '<',
                 //onremove: '<'
