@@ -49,8 +49,8 @@
                 var menu_items = result.data;
                 var found = {};
                 console.log(menu_items);
-                console.log(result.data.length);
-                for (var i=0; i<result.data.length;i++){
+                console.log(menu_items.length);
+                for (var i=0; i<menu_items.length;i++){
                     var lookingup = result.data['description'].toLowerCase();
                     console.log(lookingup);
                     if (result.data['description'].toLowerCase().indexOf(searchItem)!=(-1)){
