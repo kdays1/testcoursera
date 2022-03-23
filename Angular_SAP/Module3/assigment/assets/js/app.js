@@ -15,8 +15,9 @@
 
             promise.then (function (result){
                 if(result.lenght!=0){
-                    
-                }
+                    narrowit.result = result;
+                } else {
+                    narrowit.result = 'Nothing was found';
             });
         }        
     }
