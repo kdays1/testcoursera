@@ -26,6 +26,7 @@
     function NarrowItDownController(MenuSearchService) {
         var narrowit = this;
         narrowit.searchItem ='';
+        narrowit.result = '';
         narrowit.getMMenuItems = function(searchItem){
             var promise = MenuSearchService.getMatchedMenuItems(searchItem);
 
