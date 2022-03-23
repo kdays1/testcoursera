@@ -9,10 +9,10 @@
     function FoundItems(){
         console.log(found);
         var ddo = {
-            restrict: 'E',
+            //restrict: 'E',
             templateUrl: './assets/pages/foundITems1.html',
             scope: {
-                found: '<found',
+                found: '<found'
                 //onremove: '<'
             },
             controller: NarrowItDownController,
@@ -30,11 +30,11 @@
             var promise = MenuSearchService.getMatchedMenuItems(searchItem);
 
             promise.then (function (founds){
-                console.log(founds.length);
+                console.log(narrowit.found);
                 if(founds.lenght!=0){
                     narrowit.result = founds;
                 } else {
-                    narrowit.result = 'Nothing was found';
+                    narrowit.result = '';
                 }
             });
         };        
