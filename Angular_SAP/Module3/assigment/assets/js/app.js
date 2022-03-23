@@ -13,7 +13,8 @@
             scope: {
                 found: '<',
                 onremove: '&',
-                wasfound: '<'
+                wasfound: '<',
+                wasnotfound: '<'
             },
             controller: NarrowItDownController,
             controllerAs: 'narrowit',
