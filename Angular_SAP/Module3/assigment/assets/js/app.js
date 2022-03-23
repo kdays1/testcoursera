@@ -18,6 +18,7 @@
                     narrowit.result = result;
                 } else {
                     narrowit.result = 'Nothing was found';
+                }
             });
         }        
     }
