@@ -35,7 +35,7 @@
                     narrowit.result = 'Nothing was found';
                 }
             });
-        }        
+        };        
     }
 
     MenuSearchService.$inject = ['$http'];
@@ -46,7 +46,7 @@
                 method: "GET",
                 url: "https://davids-restaurant.herokuapp.com/menu_items.json"
             }).then (function (result){
-                menu_items = result.data;
+                var menu_items = result.data;
                 var found = {};
                 for (i=0; i<menu_items.lenght;i++){
                     var lookingup = menu_items['description'][i].toLowerCase()
@@ -57,7 +57,7 @@
                 }
                 return found;
             });
-        }
+        };
     }
 
 
