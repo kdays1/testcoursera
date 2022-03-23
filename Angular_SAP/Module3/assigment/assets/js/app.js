@@ -10,16 +10,16 @@
     function NarrowItDownController(MenuSearchService) {
         var narrowit = this;
         narrowit.searchItem ='';
-        narrowit.result = '';
+        narrowit.items = '';
         narrowit.getMMenuItems = function(searchItem){
             var promise = MenuSearchService.getMatchedMenuItems(searchItem);
 
             promise.then (function (founds){
                 if(founds.lenght!=0){
-                    narrowit.result = founds;
+                    narrowit.items = founds;
                     console.log(narrowit.result);
                 } else {
-                    narrowit.result = '';
+                    narrowit.items = '';
                 }
             });
         };        
@@ -55,7 +55,7 @@
             //restrict: 'E',
             templateUrl: './assets/pages/foundITems1.html',
             scope: {
-                result: '<'
+                items: '<'
                 //onremove: '<'
             },
             controller: NarrowItDownController,
