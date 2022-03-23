@@ -55,7 +55,7 @@
             //restrict: 'E',
             templateUrl: './assets/pages/foundITems1.html',
             scope: {
-                result: '<'
+                found: '<'
                 //onremove: '<'
             },
             controller: NarrowItDownController,
