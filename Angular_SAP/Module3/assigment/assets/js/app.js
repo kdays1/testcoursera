@@ -7,7 +7,6 @@
     .directive('foundItems', FoundItems);
 
     function FoundItems(){
-        console.log(found);
         var ddo = {
             //restrict: 'E',
             templateUrl: './assets/pages/foundITems1.html',
@@ -19,6 +18,7 @@
             controllerAs: 'narrowit',
             bindToController: true
         };
+        console.log(found);
         return ddo;
     }
 
@@ -30,7 +30,7 @@
             var promise = MenuSearchService.getMatchedMenuItems(searchItem);
 
             promise.then (function (founds){
-                console.log(narrowit.found);
+                console.log(narrowit.founds);
                 if(founds.lenght!=0){
                     narrowit.result = founds;
                 } else {
