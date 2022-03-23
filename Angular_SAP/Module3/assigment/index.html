@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="./assets/css/styles/styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" ng-controller="NarrowItDownController as narrowit">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
-    <section ng-controller="NarrowItDownController as narrowit">
+    <section>
         <div class="form-group">
             <input type="text" placeholder="search term" class="form-control" ng-model="narrowit.searchItem">
         </div>
@@ -20,7 +20,7 @@
         </div>
     
         <!-- found-items should be implemented as a component -->
-        <found-items found-items="narrowit.result" on-remove="narrowit.onRemove"></found-items>
+        <found-items found-items="narrowit.result"></found-items>
     </div>
     </section>
     

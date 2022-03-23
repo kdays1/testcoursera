@@ -1,6 +1,8 @@
 <ol>
-    <li ng-repeat="item on narrowit.result">
-        {{ result.name }} of {{ result.description }}
+    <li ng-repeat="item in narrowit.result">
+        <p>{{ item.name }}</p>
+        <p>{{ item.description }}</p>
+        <p>{{item.short_name}}</p>
         <!-- <button ng-click="narrowit.onRemove({index: $index});">Remove Item</button> -->
     </li>
 </ol>
