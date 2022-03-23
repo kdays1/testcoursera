@@ -4,7 +4,7 @@
     angular.module('NarrowItDownApp',[])
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService',MenuSearchService)
-    .directive('foundItems', foundItems);
+    .directive('foundItems', FoundItems);
 
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
@@ -43,7 +43,7 @@
         }
     }
 
-    function foundItems(){
+    function FoundItems(){
         var ddo = {
             templateUrl: 'foundITems1.html',
             scope: {
