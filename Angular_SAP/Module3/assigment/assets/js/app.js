@@ -30,7 +30,7 @@
 
             promise.then (function (founds){
                 console.log(founds.length);
-                if(found.lenght!=0){
+                if(founds.lenght!=0){
                     narrowit.result = founds;
                 } else {
                     narrowit.result = 'Nothing was found';
