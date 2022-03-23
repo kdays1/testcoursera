@@ -6,21 +6,6 @@
     .service('MenuSearchService',MenuSearchService)
     .directive('foundItems', FoundItems);
 
-    function FoundItems(){
-        var ddo = {
-            //restrict: 'E',
-            templateUrl: './assets/pages/foundITems1.html',
-            scope: {
-                items: '<'
-                //onremove: '<'
-            },
-            controller: NarrowItDownController,
-            controllerAs: 'narrowit',
-            bindToController: true
-        };
-        return ddo;
-    }
-
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
         var narrowit = this;
@@ -64,6 +49,21 @@
                 return found;
             });
         };
+    }
+
+    function FoundItems(){
+        var ddo = {
+            //restrict: 'E',
+            templateUrl: './assets/pages/foundITems1.html',
+            scope: {
+                items: '<'
+                //onremove: '<'
+            },
+            controller: NarrowItDownController,
+            controllerAs: 'narrowit',
+            bindToController: true
+        };
+        return ddo;
     }
 
 }) ();
