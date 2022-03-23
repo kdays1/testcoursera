@@ -48,7 +48,7 @@
             }).then (function (result){
                 var menu_items = result.data;
                 var found = {};
-                for (i=0; i<menu_items.lenght;i++){
+                for (var i=0; i<menu_items.lenght;i++){
                     var lookingup = menu_items['description'][i].toLowerCase()
                     if (lookingup.indexOf(searchItem)!=(-1)){
                         var item = menu_items[i];
