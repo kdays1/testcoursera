@@ -30,9 +30,9 @@
             var promise = MenuSearchService.getMatchedMenuItems(searchItem);
 
             promise.then (function (founds){
-                console.log(narrowit.founds);
                 if(founds.lenght!=0){
                     narrowit.result = founds;
+                    console.log(narrowit.result);
                 } else {
                     narrowit.result = '';
                 }
