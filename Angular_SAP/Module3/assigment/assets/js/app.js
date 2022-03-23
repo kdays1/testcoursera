@@ -62,7 +62,7 @@
             controllerAs: 'narrowit',
             bindToController: true
         };
-        console.log(result);
+        console.log(items);
         return ddo;
     }
 
