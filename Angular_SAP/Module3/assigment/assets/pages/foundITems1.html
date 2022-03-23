@@ -1,4 +1,7 @@
-<p>Founded :</p>
+<p ng-if!="narrowit.wasfound">Nothing Found!</p>
+<section ng-if="narrowit.wasfound">
+    <p>Founded :</p>
+
 <ol>
     <li ng-repeat="item in narrowit.found">
         <p>{{ item.name }}</p>
@@ -7,3 +10,4 @@
         <button ng-click="narrowit.onremove({index: $index});">Don't want this one!</button>
     </li>
 </ol>
+</section>

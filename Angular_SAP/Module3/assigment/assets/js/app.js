@@ -12,7 +12,8 @@
             templateUrl: 'assets/pages/foundITems1.html',
             scope: {
                 found: '<',
-                onremove: '&'
+                onremove: '&',
+                wasfound: '<'
             },
             controller: NarrowItDownController,
             controllerAs: 'narrowit',
@@ -34,8 +35,10 @@
                 if(founds.lenght!=0){
                     narrowit.result = founds;
                     console.log(narrowit.result);
+                    narrowit.wasfound = true;
                 } else {
                     narrowit.result = '';
+                    narrowit.wasfound = false;
                 }
             });
             narrowit.onremove = function (itemIndex) {
