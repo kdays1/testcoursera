@@ -1,7 +1,7 @@
 h1,h2,a,p{
     font-family: 'Raleway', sans-serif;
 }
-a:hover{
+a:hover,a:visited{
     text-decoration: none;
     color: green
 }
