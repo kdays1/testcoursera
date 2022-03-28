@@ -7,7 +7,6 @@
     CategoriesController.$inject = ['MenuDataService']
     function CategoriesController(MenuDataService) {
         var ctrl = this;
-        ctrl.categ = MenuDataService.getAllCatergories();
     }
 
 }) ();
