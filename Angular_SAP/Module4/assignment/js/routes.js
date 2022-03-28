@@ -19,12 +19,12 @@
         .state('categories', {
             url:'/categories',
             templateUrl: 'js/templates/categoriestemplate.html',
-            // controller: 'CategoriesController as ctrl',
-            // resolve: {
-            //     categ: ['MenuDataService', function (MenuDataService) {
-            //         return MenuDataService.getAllCatergories();
-            //     }]
-            // }
+            controller: 'CategoriesController as ctrl',
+            resolve: {
+                categ: ['MenuDataService', function (MenuDataService) {
+                    return MenuDataService.getAllCatergories();
+                }]
+            }
         })
 
         .state('categories.items', {

@@ -5,7 +5,8 @@
     .service('MenuDataService',MenuDataService)
     .constant('Page',"https://davids-restaurant.herokuapp.com");
 
-    function MenuDataService(){
+    MenuDataService.$inject = ['$http'];
+    function MenuDataService($http){
         var service = this;
         service.getAllCatergories = function(){
             return $http({
