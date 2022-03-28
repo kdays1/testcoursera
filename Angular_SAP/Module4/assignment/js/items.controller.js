@@ -4,10 +4,12 @@
     angular.module('data')
     .controller('ItemsController', ItemsController);
 
-    ItemsController.$inject = ['MenuDataService']
-    function ItemsController(MenuDataService) {
+    ItemsController.$inject = ['$stateParams','MenuDataService']
+    function ItemsController($stateParams,MenuDataService) {
         var ctrl = this;
-        ctrl.categ = MenuDataService.getAllCatergories();
+        var categoryShortName  = item[$stateParams.ItemId];
+        ctrl.catsn = MenuDataService.getItemsForCategory(categoryShortName);
+
     }
 
 }) ();
