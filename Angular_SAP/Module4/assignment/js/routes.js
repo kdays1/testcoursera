@@ -29,7 +29,7 @@
 
         .state('categories.items', {
             url: '/items',
-            templateUrl: '.js/templates/itemstemplate.html',
+            templateUrl: 'js/templates/itemstemplate.html',
         });
     }
 
