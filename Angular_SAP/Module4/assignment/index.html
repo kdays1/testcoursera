@@ -8,11 +8,24 @@
 </head>
 <body>
     <h1>Poly Restaurant</h1>
+    <a ui-sref="Home">Home</a>
     <ui-view></ui-view>
 
     <!--Libraries-->
     <script src="./js/lib/angular-ui-router.min.js"></script>
     <script src="./js/lib/angular.js"></script>
     
+    <!--Modules-->
+    <script src="./js/menuapp.module.js"></script>
+    <script src="./js/data.module.js"></script>
+
+    <!--Routes-->
+    <script src="./js/routes.js"></script>
+
+    <!--Data Artifacts-->
+    <script src="categories.component.js"></script>
+    <script src="items.component.js"></script>
+    <script src="menudata.service.js"></script>
+
 </body>
 </html>

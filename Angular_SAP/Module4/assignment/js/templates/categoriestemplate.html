@@ -1,6 +1,7 @@
+<a ui-sref="Home">Home</a>
 <h2>Available Categories:</h2>
 <ol>
-    <li ng-repeat="item in $ctrl.categ">
-        Category: {{item.name}}
+    <li ng-repeat="item in $ctrl.categ" ui-sref="categories.items({itemId: $index})">
+        Category: {{item.name}} {{item.short_name}}
     </li>
 </ol>

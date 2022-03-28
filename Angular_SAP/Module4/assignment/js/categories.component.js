@@ -7,7 +7,7 @@
         bindings: {
             categ: '<'
         }
-
+        
     });
     //getAllCategories
 }) ();

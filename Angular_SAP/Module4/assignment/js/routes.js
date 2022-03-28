@@ -9,7 +9,22 @@
         //Redirection to home if no other URL matches
         $urlRouterProvider.otherwise('/');
 
-        
+        $stateProvider 
+
+        .state('home', {
+            url:'/',
+            templateUrl: 'js/templates/home.html'
+        })
+
+        .state('categories', {
+            url:'/categories',
+            templateUrl: 'js/templates/categoriestemplate.html'
+        })
+
+        .state('categories.items', {
+            url: '/items',
+            templateUrl: '.js/templates/itemstemplate.html',
+        });
     }
 
 }) ();
