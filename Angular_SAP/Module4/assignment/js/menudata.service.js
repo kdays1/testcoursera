@@ -22,7 +22,7 @@
                 method: "GET",
                 url: ("https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName)  
             }).then (function(result){
-                var catsn = result.data;
+                var catsn = result['menu_items'].data;
                 console.log(catsn);
                 return catsn;
             })
