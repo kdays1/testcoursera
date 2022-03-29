@@ -16,17 +16,17 @@
                 console.log(categ);
                 return categ;
             })
-        };
-        service.getItemsForCategory = function(categoryShortName){
-            var catsn = $http({
-                method: "GET",
-                url: ("https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName),
-                // params: {
-                //     short_name : categoryShortName
-                // }
-            });
-            return catsn;
         }
+        service.getItemsForCategory = function(categoryShortName){
+            return catsn = $http({
+                method: "GET",
+                url: ("https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName)  
+            }).then (function(result){
+                var catsn = result.data;
+                console.log(catsn);
+                return catsn;
+            })
+        };
     }
 
 }) ();
