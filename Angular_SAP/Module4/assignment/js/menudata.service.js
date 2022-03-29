@@ -9,13 +9,11 @@
     function MenuDataService($http){
         var service = this;
         service.getAllCatergories = function(){
-            return $http({
+            var categ = $http({
                 method: "GET",
                 url: (Page + "/categories.json")
-            }).then (function (result){
-                var categ = result.data;
+            });
                 return categ;
-            })
         };
         service.getItemsForCategory = function(categoryShortName){
             var catsn = $http({
