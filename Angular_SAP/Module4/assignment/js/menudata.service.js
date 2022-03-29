@@ -14,6 +14,7 @@
                 url: (Page + "/categories.json")
             }).then (function (result){
                 var categ = result.data;
+                console.log(categ);
                 return categ;
             })
         };
