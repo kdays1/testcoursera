@@ -12,13 +12,7 @@
             var categ = $http({
                 method: "GET",
                 url: (Page + "/categories.json")
-<<<<<<< HEAD
             });
-=======
-            }).then (function (result){
-                var categ = result.data;
-                console.log(categ);
->>>>>>> 87af13a1914bc8bc2b91946774b3dad12d40f365
                 return categ;
         };
         service.getItemsForCategory = function(categoryShortName){
