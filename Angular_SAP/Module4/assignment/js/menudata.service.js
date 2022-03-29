@@ -20,10 +20,10 @@
         service.getItemsForCategory = function(categoryShortName){
             var catsn = $http({
                 method: "GET",
-                url: ("https://davids-restaurant.herokuapp.com/menu_items.json?category="),
-                params: {
-                    short_name : categoryShortName
-                }
+                url: ("https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName),
+                // params: {
+                //     short_name : categoryShortName
+                // }
             });
             return catsn;
         }

@@ -30,6 +30,7 @@
         .state('categories.items', {
             url: '/items',
             templateUrl: 'js/templates/itemstemplate.html',
+            controller:"ItemsController as ctrl"
         });
     }
 
