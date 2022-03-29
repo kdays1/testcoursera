@@ -28,9 +28,14 @@
         })
 
         .state('categories.items', {
-            url: '/items',
+            url: '/items/{itemId}',
             templateUrl: 'js/templates/itemstemplate.html',
-            controller:"ItemsController as ctrl"
+            controller:"ItemsController as ctrl",
+            resolve: {
+                catsn: ['MenuDataService', function (MenuDataService){
+                    return MenuDataService.getItemsForCategory(categoryShortName);
+                }]
+            }
         });
     }
 

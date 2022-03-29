@@ -9,8 +9,6 @@
         var ctrl = this;
         var itemid  = categ[$stateParams.itemId];
         ctrl.categoryShortName = itemid.short_name;
-        ctrl.catsn = MenuDataService.getItemsForCategory(categoryShortName);
-
     }
 
 }) ();
