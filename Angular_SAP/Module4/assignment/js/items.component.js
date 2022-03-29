@@ -5,7 +5,8 @@
     .component('items', {
         templateUrl: 'js/templates/itemstemplate.html',
         bindings: {
-            catsn: '<'
+            catsn: '<',
+            categ: '<'
         }
 
     });
