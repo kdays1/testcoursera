@@ -32,8 +32,11 @@
             templateUrl: 'js/templates/itemstemplate.html',
             controller:"ItemsController as ctrl",
             resolve: {
-                catsn: ['MenuDataService', function (MenuDataService){
-                    return MenuDataService.getItemsForCategory(categoryShortName);
+                catsn: ['MenuDataService','$stateParams', function (MenuDataService){
+                    return MenuDataService.getAllCatergories()
+                    .then(function (categ) {
+                        return MenuDataService.getItemsForCategory(categ[$stateParams.itemId].short_name)
+                    });
                 }]
             }
         });
