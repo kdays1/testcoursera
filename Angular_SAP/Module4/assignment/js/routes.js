@@ -32,7 +32,7 @@
             templateUrl: 'js/templates/itemstemplate.html',
             controller:"ItemsController as ctrl",
             resolve: {
-                catsn: ['MenuDataService','$stateParams', function (MenuDataService){
+                catsn: ['MenuDataService','$stateParams', function (MenuDataService, $stateParams){
                     return MenuDataService.getAllCatergories()
                     .then(function (categ) {
                         return MenuDataService.getItemsForCategory(categ[$stateParams.itemId].short_name)
