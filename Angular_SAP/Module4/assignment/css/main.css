@@ -7,6 +7,6 @@ a,p,h2,li{
     font-family: 'Nunito', sans-serif;
 }
 
-li:hover{
+.sel:hover{
     border: 2px solid black;
 }
