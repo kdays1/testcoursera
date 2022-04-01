@@ -11,10 +11,20 @@
     
       service.signUpMenu = function (cat) {
         return $http.get(ThePath + '/menu_items.json').then(function (response) {
-          var selected = response.data['menu_items']['short_name'=cat];
+          var selected = response.data['menu_items']
           console.log(response.data['menu_items'])
           console.log(selected);
-          return selected;
+          for(i=0;i<selected.lenth();i++){
+            if (selected.short_name==cat){
+              var x=i;
+            }
+          }
+          if(x){
+            selection = selected[i];
+          }else{
+            selection = null;
+          }
+          return selection;
         });
       };    
     }
