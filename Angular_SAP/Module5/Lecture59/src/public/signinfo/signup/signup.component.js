@@ -2,7 +2,7 @@
     "use strict";
     
     angular.module('public')
-    .component('signup', {
+    .component('signupcomponent', {
         templateUrl: 'src/public/signinfo/signup/signup.html',
     });
     

@@ -1,5 +1,5 @@
-<div class="container">
-    <form name="ctrl" ng-controller="SignUpController as ctrl" novalidate>
+<div class="container"  ng-controller="SignUpController as ctrl" >
+    <form name="sign" novalidate>
         <input type="text" name="firstname" placeholder="Enter your first name" ng-model="ctrl.user.fname" style="color: black;" required>
         <br>
         <input type="text" name="lastname" placeholder="Enter your last name" ng-model="ctrl.user.lname" style="color: black;" required>
