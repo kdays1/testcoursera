@@ -1,7 +1,7 @@
 <div class="container"  ng-controller="SignUpController as ctrl" >
     <form name="sign" novalidate>
         <input type="text" name="firstname" placeholder="Enter your first name" ng-model="ctrl.user.fname" style="color: black;" required>
-        <br>{{ctrl.user.fname}}
+        <br>{{$ctrl.user.fname}}
         <input type="text" name="lastname" placeholder="Enter your last name" ng-model="ctrl.user.lname" style="color: black;" required>
         <br>{{ctrl.user.lname}}
         <input type="email" name="email" placeholder="Enter your email" ng-model="ctrl.user.email" style="color: black;" required>
@@ -17,7 +17,7 @@
 
         <input type="text" name="menu" placeholder="Enter your favorite menu" ng-model="ctrl.user.menu" style="color: black;" required>
 
-        <button ng-disabled="sign.$invalid" ng-click="ctrl.submit()">
+        <button ng-disabled="sign.$invalid" ng-click="ctrl.submit({cat: $ctrl.user.menu})">
             Submit!
         </button>
     </form>
