@@ -10,6 +10,7 @@
         $scope.user = {};
         $scope.result = {};
         var cat = $scope.user.menu;
+        console.log($scope.user);
         console.log(cat);
         ctrl.submit = function(cat){
             var promise = SignInfoService.signUpMenu(cat);

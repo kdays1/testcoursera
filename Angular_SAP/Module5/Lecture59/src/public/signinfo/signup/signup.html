@@ -1,23 +1,23 @@
 <div class="container">
-    <form name="sign" novalidate>
-        <input type="text" name="firstname" placeholder="Enter your first name" ng-model="sign.user.fname" required>
+    <form name="ctrl" ng-controller="SignUpController as ctrl" novalidate>
+        <input type="text" name="firstname" placeholder="Enter your first name" ng-model="ctrl.user.fname" required>
         <br>
-        <input type="text" name="lastname" placeholder="Enter your last name" ng-model="sign.user.lname" required>
+        <input type="text" name="lastname" placeholder="Enter your last name" ng-model="ctrl.user.lname" required>
         <br>
-        <input type="email" name="email" placeholder="Enter your email" ng-model="sign.user.email" required>
+        <input type="email" name="email" placeholder="Enter your email" ng-model="ctrl.user.email" required>
         <span ng-if="sign.email.$invalid && sign.email.$touched">
             The address should look like: name@domain.com 
         </span>
         <br>
-        <input type="text" name="phone" placeholder="Enter your phone" ng-model="sign.user.phone" required size="10">
+        <input type="text" name="phone" placeholder="Enter your phone" ng-model="ctrl.user.phone" required size="10">
         <span ng-if="sign.phone.$invalid && sign.phone.$touched">
             Phone must have 10 digits.
         </span>
         <br>
 
-        <input type="text" name="menu" placeholder="Enter your favorite menu" ng-model="sign.user.menu" required>
+        <input type="text" name="menu" placeholder="Enter your favorite menu" ng-model="ctrl.user.menu" required>
 
-        <button ng-disabled="sign.$invalid" ng-click="sign.submit()">
+        <button ng-disabled="sign.$invalid" ng-click="ctrl.submit()">
             Submit!
         </button>
     </form>
