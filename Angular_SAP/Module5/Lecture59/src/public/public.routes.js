@@ -25,16 +25,7 @@ function routeConfig ($stateProvider) {
   })
     .state('public.signup',{
       url: '/signup',
-      templateUrl: 'src/public/signup/signup.html',
-      controller:"SignUpController as sgctrl",
-      resolve: {
-          catsn: ['MenuDataService','$stateParams', function (MenuDataService, $stateParams){
-              return MenuDataService.getAllCatergories()
-              .then(function (categ) {
-                  return MenuDataService.getItemsForCategory(categ[$stateParams.itemId].short_name)
-              });
-          }]
-      }
+      templateUrl: 'src/public/signup/signup.html'
     })
     .state('public.menu', {
       url: '/menu',

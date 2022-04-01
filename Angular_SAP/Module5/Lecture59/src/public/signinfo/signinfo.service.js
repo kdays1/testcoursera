@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     
-    angular.module('signinfo')
+    angular.module('public')
     .service('SignInfoService', SignInfoService);
     
     
