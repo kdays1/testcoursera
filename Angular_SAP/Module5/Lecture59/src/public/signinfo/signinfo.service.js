@@ -10,7 +10,7 @@
       var service = this;
     
       service.signUpMenu = function (cat) {
-        return $http.get(thePath + '/menu_items.json').then(function (response) {
+        return $http.get(ThePath + '/menu_items.json').then(function (response) {
           var selected = response.data['menu_items']['short_name'=cat];
           console.log(response.data['menu_items'])
           console.log(selected);
