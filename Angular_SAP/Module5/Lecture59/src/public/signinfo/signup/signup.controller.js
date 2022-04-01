@@ -5,14 +5,14 @@
     .controller('SignUpController', SignUpController);
     
     SignUpController.$inject = ['$scope','SignInfoService'];
-    function SignUpController($scope) {
-        var ctrl = this;
+    function SignUpController($scope,SignInfoService) {
+        var $ctrl = this;
         $scope.user = {};
         $scope.result = {};
         var cat = $scope.user.menu;
         console.log($scope.user);
         console.log(cat);
-        ctrl.submit = function(cat){
+        $ctrl.submit = function(cat){
             var promise = SignInfoService.signUpMenu(cat);
             promise.then(function(signupcategory){
                 if (signupcategory!=0){
