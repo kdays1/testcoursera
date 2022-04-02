@@ -1,6 +1,37 @@
 <div class="container">
     <h3>Enter your data to sign up! Special surprises awaits you (:</h3>
 
-    <signupcomponent> </signupcomponent>
+    <div class="container">
+        <form name="sign" novalidate>
+            <input type="text" name="firstname" placeholder="Enter your first name" ng-model="ctrl.user.fname" style="color: black;" required>
+            <br>{{$ctrl.user.fname}}
+            <span
+            ng-if="(sign.firstname.$error.required && sign.username.$touched">
+            Enter first name is required
+            </span>
+            <input type="text" name="lastname" placeholder="Enter your last name" ng-model="ctrl.user.lname" style="color: black;" required>
+            <br>{{ctrl.user.lname}}
+            <span
+            ng-if="(sign.lastname.$error.required && sign.lastname.$touched">
+            Enter last name is required
+            </span> SignUpController
+            <input type="email" name="email" placeholder="Enter your email" ng-model="ctrl.user.email" style="color: black;" required>
+            <span ng-if="sign.email.$invalid && sign.email.$touched">
+                The address should look like: name@domain.com 
+            </span>{{SignUpController.user.email}}
+            <br>
+            <input type="text" name="phone" placeholder="Enter your phone" ng-model="ctrl.user.phone" style="color: black;" required size="10">
+            <span ng-if="sign.phone.$invalid && sign.phone.$touched">
+                Phone must have 10 digits.
+            </span>{{sign.user.phone}}
+            <br>
+    
+            <input type="text" name="menu" placeholder="Enter your favorite menu" ng-model="ctrl.user.menu" style="color: black;" required>
+    
+            <button ng-disabled="sign.$invalid" ng-click="ctrl.submit({cat: ctrl.user.menu})">
+                Submit!
+            </button>
+        </form>
+    </div>
 
 </div>

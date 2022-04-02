@@ -1,15 +1,8 @@
 (function () {
     "use strict";
     
-    angular.module('public')
-    .component('signupcomponent', {
-        templateUrl: 'src/public/signinfo/signup/signup.html',
-        bindings : {
-            user: '='
-        },
-        controller: SignUpController
-    });
-    
+    angular.module('public');
+
     SignUpController.$inject = ['$scope','SignInfoService'];
     function SignUpController($scope,SignInfoService) {
         var $ctrl = this;
