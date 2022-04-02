@@ -4,6 +4,9 @@
     angular.module('public')
     .component('signupcomponent', {
         templateUrl: 'src/public/signinfo/signup/signup.html',
+        bindings : {
+            user: '='
+        },
         controller: SignUpController
     });
     
