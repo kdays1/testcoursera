@@ -1,9 +1,17 @@
-<div class="container"  ng-controller="SignUpController as ctrl" >
+<div class="container">
     <form name="sign" novalidate>
         <input type="text" name="firstname" placeholder="Enter your first name" ng-model="ctrl.user.fname" style="color: black;" required>
         <br>{{$ctrl.user.fname}}
+        <span
+        ng-if="(sign.firstname.$error.required && sign.username.$touched">
+        Enter first name is required
+        </span>
         <input type="text" name="lastname" placeholder="Enter your last name" ng-model="ctrl.user.lname" style="color: black;" required>
         <br>{{ctrl.user.lname}}
+        <span
+        ng-if="(sign.lastname.$error.required && sign.lastname.$touched">
+        Enter last name is required
+        </span>
         <input type="email" name="email" placeholder="Enter your email" ng-model="ctrl.user.email" style="color: black;" required>
         <span ng-if="sign.email.$invalid && sign.email.$touched">
             The address should look like: name@domain.com 
