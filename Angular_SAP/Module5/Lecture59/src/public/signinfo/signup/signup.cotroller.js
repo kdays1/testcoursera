@@ -15,7 +15,7 @@
         ctrl.submit = function(){
             var promise = SignInfoService.signUpMenu(ctrl.user.menu);
             promise.then(function(signupcategory){
-                if (signupcategory!=undefined){
+                if (signupcategory!=0){
                     ctrl.user.result = signupcategory;
                     console.log(ctrl.user.result);
                     var errorocurred = false;
@@ -35,8 +35,8 @@
             console.log(selected);
             return selected;
         }, function(error){
-            var selected = undefined;
-            return selected;
+            var selection = 0;
+            return selection;
         });
     };    
     }
