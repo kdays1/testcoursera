@@ -38,11 +38,11 @@ function MenuService($http, ApiPath) {
       service.usuario = angular.copy(usr);
       service.err = angular.copy(err);
       service.ini = angular.copy(initi);
-  }
+  };
 
   service.showUser = function (){
       return service.usuario;
-  }
+  };
   service.getStatus = function(){
     if(service.init || service.err){
       return true;
@@ -50,11 +50,6 @@ function MenuService($http, ApiPath) {
       return false;
     }
 
-  }
-  }
-
+  };
 }
-
-
-
 })();
