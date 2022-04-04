@@ -20,6 +20,8 @@
                     console.log(ctrl.user.result);
                     ctrl.errorocurred = false;
                     ctrl.initialize = false;
+                    ctrl.usuario = SignInfoService.showUser();
+                    console.log(ctrl.usuario);
                 },function(error) {
                     ctrl.user.result = "";
                     SignInfoService.keepUser(ctrl.user);
@@ -27,10 +29,6 @@
                     ctrl.initialize = true;
                     console.log(error);
                 });
-            if (ctrl.user.result!=""){
-                ctrl.usuario = SignInfoService.showUser();
-                console.log(ctrl.usuario);
-            }
     }
 }
     
