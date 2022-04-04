@@ -2,7 +2,7 @@
     <h3>Here is your registered information!</h3>
     <p ng-if="ctrl.status">You haven't sign up yet <a ui-sref="public.signup"><span>Sign up now!</span></a></p>
     <div class="container" ng-if="ctrl.status==false">
-        <p>This is your first name: {{ctrl.usuario.name}}</p>
+        <p>This is your first name: {{ctrl.usuario.fname}}</p>
         <p>This is your last name: {{ctrl.usuario.lname}}</p>
         <p>This is your email: {{ctrl.usuario.email}}</p>
         <p>This is your phone: {{ctrl.usuario.phone}}</p>
