@@ -37,17 +37,18 @@
     SignInfoService.$inject = ['$http', 'ThePath'];
     function SignInfoService($http, ThePath) {
     var service = this;
-    var usuario = {};
+    service.usuario = {};
+
     service.signUpMenu = function (cat) {
         return $http.get(ThePath + '/menu_items/' + cat +'.json');
     };
     
     service.keepUser = function (usr) {
-        angular.copy(usr,[usuario]);
+        service.usuario = angular.copy(usr);
     }
 
     service.showUser = function (){
-        return usuario;
+        return service.usuario;
     }
     }
     
