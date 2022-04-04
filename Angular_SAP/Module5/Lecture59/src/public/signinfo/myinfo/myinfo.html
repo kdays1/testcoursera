@@ -1,3 +1,13 @@
 <div class="container">
-    
+    <h3>Here is your registered information!</h3>
+    <p ng-if="ctrl.errorocurred">You haven't sign up yet <a ui-sref="public.signup"><span>Sign up now!</span></a></p>
+    <div class="container" ng-if="ctrl.ocurred==false">
+        <p>This is your first name: {{ctrl.user.fname}}</p>
+        <p>This is your last name: {{ctrl.user.lname}}</p>
+        <p>This is your email: {{ctrl.user.email}}</p>
+        <p>This is your phone: {{ctrl.user.phone}}</p>
+        <p>This is your favorite menu: {{ctrl.user.result.name}}</p>
+        <img ng-src="{{ctrl.ThePath}}/images/{{ctrl.user.result.short_name}}.jpg">
+        {{ctrl.user.result.description}}
+    </div>
 </div>

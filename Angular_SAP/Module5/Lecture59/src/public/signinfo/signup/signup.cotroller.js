@@ -10,6 +10,7 @@
         var ctrl = this;
         ctrl.user = {};
         ctrl.errorocurred = false;
+        var usuarios = [];
         //var cat = $scope.user.menu;
         console.log(ctrl.user);
         ctrl.submit = function(){
@@ -18,6 +19,7 @@
                     ctrl.user.result = signupcategory.data;
                     console.log(ctrl.user.result);
                     ctrl.errorocurred = false;
+                    usuarios.push(ctrl.user.result);
                 },function(error) {
                     ctrl.user.result = "";
                     ctrl.errorocurred = true;
@@ -31,7 +33,7 @@
     var service = this;
     service.signUpMenu = function (cat) {
         return $http.get(ThePath + '/menu_items/' + cat +'.json');
-    };    
+    };   
     }
     
     })();
