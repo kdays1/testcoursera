@@ -9,15 +9,17 @@
     function SignUpController(SignInfoService) {
         var ctrl = this;
         ctrl.user = {};
+        var errorocurred = false;
         //var cat = $scope.user.menu;
         console.log(ctrl.user);
         ctrl.submit = function(){
             var promise = SignInfoService.signUpMenu(ctrl.user.menu);
             promise.then(function(signupcategory){
-                    ctrl.user.result = signupcategory;
-                    console.log(ctrl.user.result);
+                ctrl.user.result = signupcategory;
+                console.log(ctrl.user.result);
+                var errorocurred = false;
                 }, function(error) {
-                    ctrl.user.result = "Please enter a valid menu item. HINT:Short Name";
+                var errorocurred = true;
         });
     }
 }
