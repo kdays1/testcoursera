@@ -31,7 +31,7 @@ function MenuService($http, ApiPath) {
   };
 
   service.signUpMenu = function (cat) {
-      return $http.get(ThePath + '/menu_items/' + cat +'.json');
+      return $http.get(ApiPath + '/menu_items/' + cat +'.json');
   };
   
   service.keepUser = function (usr,errors,initi) {
