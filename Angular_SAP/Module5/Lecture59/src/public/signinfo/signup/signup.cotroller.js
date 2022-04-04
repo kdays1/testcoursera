@@ -15,7 +15,7 @@
         ctrl.submit = function(){
             var promise = SignInfoService.signUpMenu(ctrl.user.menu);
             promise.then(function(signupcategory){
-                    ctrl.user.result = signupcategory.data.name;
+                    ctrl.user.result = signupcategory.data;
                     console.log(ctrl.user.result);
                     var errorocurred = false;
                 },function(error) {
