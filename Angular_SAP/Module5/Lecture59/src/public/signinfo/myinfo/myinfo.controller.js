@@ -4,11 +4,11 @@
     angular.module('public')
     .controller('MyInfoController', MyInfoController);
 
-    SignUpController.$inject = ['MyInfoService'];
-    function MyInfoController(MyInfoService) {
+    SignUpController.$inject = ['MenuService'];
+    function MyInfoController(MenuService) {
         var ctrl = this;
         ctrl.usuario = {};
-        ctrl.usuario = SignInfoService.showUser();
+        ctrl.usuario = MenuService.showUser();
     }
     
     })();
