@@ -29,6 +29,7 @@
                 });
             if (ctrl.user.result!=""){
                 ctrl.usuario = SignInfoService.showUser();
+                console.log(ctrl.usuario);
             }
     }
 }
