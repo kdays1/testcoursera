@@ -15,12 +15,13 @@
         ctrl.submit = function(){
             var promise = SignInfoService.signUpMenu(ctrl.user.menu);
             promise.then(function(signupcategory){
-                ctrl.user.result = signupcategory;
-                console.log(ctrl.user.result);
-                var errorocurred = false;
-                }, function(error) {
-                var errorocurred = true;
-        });
+                if (signupcategory!=undefined){
+                    ctrl.user.result = signupcategory;
+                    console.log(ctrl.user.result);
+                    var errorocurred = false;
+                }else {
+                    var errorocurred = true;
+                }});
     }
 }
     
@@ -28,8 +29,16 @@
     function SignInfoService($http, ThePath) {
     var service = this;
     service.signUpMenu = function (cat) {
-        return $http.get(ThePath + '/menu_items/' + cat +'.json');
-        };
+        return $http.get(ThePath + '/menu_items/' + cat +'.json').then(function (response) {
+            var selected = response.data;
+            console.log(response.data);
+            console.log(selected);
+            return selected;
+        }, function(error){
+            var selected = undefined;
+            return selected;
+        });
     };    
+    }
     
     })();
