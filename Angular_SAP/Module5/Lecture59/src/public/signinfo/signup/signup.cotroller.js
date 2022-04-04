@@ -14,15 +14,13 @@
         ctrl.submit = function(){
             var promise = SignInfoService.signUpMenu(ctrl.user.menu);
             promise.then(function(signupcategory){
-                if (signupcategory!=0 && signupcategory!=undefined){
                     ctrl.user.result = signupcategory;
                     console.log(ctrl.user.result);
-                }else {
-                    ctrl.user.result = "Please enter a valid menu item. HINT:Short Name"
-                }
-            });
-        }
+                }, function(error) {
+                    ctrl.user.result = "Please enter a valid menu item. HINT:Short Name";
+        });
     }
+}
     
     SignInfoService.$inject = ['$http', 'ThePath'];
     function SignInfoService($http, ThePath) {
