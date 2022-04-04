@@ -2,12 +2,12 @@
     <h3>Here is your registered information!</h3>
     <p ng-if="ctrl.errorocurred || ctrl.initialize">You haven't sign up yet <a ui-sref="public.signup"><span>Sign up now!</span></a></p>
     <div class="container" ng-if="ctrl.ocurred==false">
-        <p>This is your first name: {{ctrl.usuario.name}}</p>
-        <p>This is your last name: {{ctrl.usuario.lname}}</p>
-        <p>This is your email: {{ctrl.usuario.email}}</p>
-        <p>This is your phone: {{ctrl.usuario.phone}}</p>
-        <p>This is your favorite menu: {{ctrl.usuario.result.name}}</p>
-        <img ng-src="{{ctrl.ThePath}}/images/{{ctrl.user.result.short_name}}.jpg">
-        {{ctrl.usuario.result.description}}
+        <p>This is your first name: {{usuario.name}}</p>
+        <p>This is your last name: {{usuario.lname}}</p>
+        <p>This is your email: {{usuario.email}}</p>
+        <p>This is your phone: {{usuario.phone}}</p>
+        <p>This is your favorite menu: {{usuario.result.name}}</p>
+        <img ng-src="{{ThePath}}/images/{{usuario.result.short_name}}.jpg">
+        {{usuario.result.description}}
     </div>
 </div>
