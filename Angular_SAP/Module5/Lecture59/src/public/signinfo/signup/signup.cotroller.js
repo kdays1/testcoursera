@@ -19,6 +19,7 @@
                     console.log(ctrl.user.result);
                     ctrl.errorocurred = false;
                 },function(error) {
+                    ctrl.user.result = "";
                     ctrl.errorocurred = true;
                     console.log(error);
                 });
