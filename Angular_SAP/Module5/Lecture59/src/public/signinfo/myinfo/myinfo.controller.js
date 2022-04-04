@@ -9,6 +9,7 @@
         var ctrl = this;
         ctrl.usuario = {};
         ctrl.usuario = MenuService.showUser();
+        ctrl.status = MenuService.getStatus();
     }
     
     })();

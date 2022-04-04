@@ -1,7 +1,7 @@
 <div class="container">
     <h3>Here is your registered information!</h3>
-    <p ng-if="ctrl.errorocurred || ctrl.initialize">You haven't sign up yet <a ui-sref="public.signup"><span>Sign up now!</span></a></p>
-    <div class="container" ng-if="ctrl.ocurred==false">
+    <p ng-if="ctrl.status">You haven't sign up yet <a ui-sref="public.signup"><span>Sign up now!</span></a></p>
+    <div class="container" ng-if="ctrl.status==false">
         <p>This is your first name: {{ctrl.usuario.name}}</p>
         <p>This is your last name: {{ctrl.usuario.lname}}</p>
         <p>This is your email: {{ctrl.usuario.email}}</p>
@@ -11,5 +11,5 @@
         {{ctrl.usuario.result.description}}
     </div>
     {{ctrl.usuario}}
-    {{ctrl.errorocurred}}
+    {{ctrl.status}}
 </div>
