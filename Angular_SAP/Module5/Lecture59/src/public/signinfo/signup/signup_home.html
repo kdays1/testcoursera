@@ -38,7 +38,8 @@
         </form>
         This is your favorite meal: {{ctrl.user.result.name}}
         <br>
-        <span ng-if="errorocurred">Please enter a valid menu item. HINT:Short Name</span>
+        <span ng-if="ctrl.errorocurred">Please enter a valid menu item. HINT:Short Name</span>
+        {{ctrl.errorocurred}}
     </div>
 
 </div>

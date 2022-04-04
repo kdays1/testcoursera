@@ -9,7 +9,7 @@
     function SignUpController(SignInfoService) {
         var ctrl = this;
         ctrl.user = {};
-        var errorocurred = false;
+        ctrl.errorocurred = false;
         //var cat = $scope.user.menu;
         console.log(ctrl.user);
         ctrl.submit = function(){
@@ -17,9 +17,9 @@
             promise.then(function(signupcategory){
                     ctrl.user.result = signupcategory.data;
                     console.log(ctrl.user.result);
-                    var errorocurred = false;
+                    ctrl.errorocurred = false;
                 },function(error) {
-                    var errorocurred = true;
+                    ctrl.errorocurred = true;
                     console.log(error);
                 });
     }
