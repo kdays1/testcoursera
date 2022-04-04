@@ -28,13 +28,8 @@
     function SignInfoService($http, ThePath) {
     var service = this;
     service.signUpMenu = function (cat) {
-        return $http.get(ThePath + '/menu_items/' + cat +'.json').then(function (response) {
-            var selected = response.data;
-            console.log(response.data);
-            console.log(selected);
-            return selected;
-        });
+        return $http.get(ThePath + '/menu_items/' + cat +'.json');
+        };
     };    
-    }
     
     })();
