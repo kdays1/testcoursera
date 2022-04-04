@@ -28,10 +28,11 @@
     
             <input type="text" name="menu" placeholder="Enter your favorite menu" ng-model="ctrl.user.menu" style="color: black;" required>
     
-            <button ng-disabled="sign.$invalid" ng-click="ctrl.submit({cat: ctrl.user.menu})">
+            <button ng-disabled="sign.$invalid" ng-click="ctrl.submit()">
                 Submit!
             </button>
         </form>
+        This is your favorite meal: {{ctrl.user.result}}
     </div>
 
 </div>
