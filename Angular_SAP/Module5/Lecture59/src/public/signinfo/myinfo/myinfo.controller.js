@@ -4,7 +4,7 @@
     angular.module('public')
     .controller('MyInfoController', MyInfoController);
 
-    SignUpController.$inject = ['MenuService'];
+    MyInfoController.$inject = ['MenuService'];
     function MyInfoController(MenuService) {
         var ctrl = this;
         ctrl.usuario = {};

@@ -36,7 +36,7 @@ function MenuService($http, ApiPath) {
   
   service.keepUser = function (usr,errors,initi) {
       service.usuario = angular.copy(usr);
-      service.err = angular.copy(err);
+      service.err = angular.copy(errors);
       service.ini = angular.copy(initi);
   };
 
