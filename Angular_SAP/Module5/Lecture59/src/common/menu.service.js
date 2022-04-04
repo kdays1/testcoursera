@@ -8,6 +8,9 @@ angular.module('common')
 MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
   var service = this;
+  service.usuario = {};
+  service.err = {};
+  service.ini = {};
 
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
@@ -26,6 +29,29 @@ function MenuService($http, ApiPath) {
       return response.data;
     });
   };
+
+  service.signUpMenu = function (cat) {
+      return $http.get(ThePath + '/menu_items/' + cat +'.json');
+  };
+  
+  service.keepUser = function (usr,errors,initi) {
+      service.usuario = angular.copy(usr);
+      service.err = angular.copy(err);
+      service.ini = angular.copy(initi);
+  }
+
+  service.showUser = function (){
+      return service.usuario;
+  }
+  service.getStatus = function(){
+    if(service.init || service.err){
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+  }
 
 }
 
