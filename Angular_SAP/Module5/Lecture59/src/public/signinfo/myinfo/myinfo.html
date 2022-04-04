@@ -1,6 +1,6 @@
 <div class="container">
     <h3>Here is your registered information!</h3>
-    <p ng-if="ctrl.errorocurred">You haven't sign up yet <a ui-sref="public.signup"><span>Sign up now!</span></a></p>
+    <p ng-if="ctrl.errorocurred || ctrl.initialize">You haven't sign up yet <a ui-sref="public.signup"><span>Sign up now!</span></a></p>
     <div class="container" ng-if="ctrl.ocurred==false">
         <p>This is your first name: {{ctrl.user.fname}}</p>
         <p>This is your last name: {{ctrl.user.lname}}</p>
