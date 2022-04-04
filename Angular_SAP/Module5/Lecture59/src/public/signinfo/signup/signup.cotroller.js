@@ -14,10 +14,10 @@
             var promise = MenuService.signUpMenu(ctrl.user.menu);
             promise.then(function(signupcategory){
                     ctrl.user.result = signupcategory.data;
-                    MenuService.keepUser(ctrl.user, ctrl.errorocurred, ctrl.initialize);
                     console.log(ctrl.user.result);
                     ctrl.errorocurred = false;
                     ctrl.initialize = false;
+                    MenuService.keepUser(ctrl.user, ctrl.errorocurred, ctrl.initialize);
                 },function(error) {
                     ctrl.user.result = "";
                     ctrl.errorocurred = true;
