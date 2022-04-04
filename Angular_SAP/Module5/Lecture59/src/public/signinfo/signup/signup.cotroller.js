@@ -19,8 +19,8 @@
                     console.log(ctrl.user.result);
                     var errorocurred = false;
                 },function(error) {
-                    console.log(error);
                     var errorocurred = true;
+                    console.log(error);
                 });
     }
 }
