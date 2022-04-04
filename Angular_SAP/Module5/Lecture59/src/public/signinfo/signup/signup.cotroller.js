@@ -9,39 +9,45 @@
     function SignUpController(SignInfoService) {
         var ctrl = this;
         ctrl.user = {};
+        ctrl.usuario = {};
         ctrl.errorocurred = false;
         ctrl.initialize = true;
-        var usuario={};
-        usuario.name = ctrl.user.fname;
-        usuario.lname = ctrl.user.lname;
-        usuario.email = ctrl.user.email;
-        usuario.phone = ctrl.user.phone;
-        usuario.menu = ctrl.user.menu;
-        //var cat = $scope.user.menu;
-        console.log(ctrl.user);
         ctrl.submit = function(){
             var promise = SignInfoService.signUpMenu(ctrl.user.menu);
             promise.then(function(signupcategory){
                     ctrl.user.result = signupcategory.data;
-                    usuario.result = ctrl.user.result;
+                    SignInfoService.keepUser(ctrl.user);
                     console.log(ctrl.user.result);
                     ctrl.errorocurred = false;
                     ctrl.initialize = false;
                 },function(error) {
                     ctrl.user.result = "";
+                    SignInfoService.keepUser(ctrl.user);
                     ctrl.errorocurred = true;
                     ctrl.initialize = true;
                     console.log(error);
                 });
+            if (ctrl.user.result!=""){
+                ctrl.usuario = SignInfoService.showUser();
+            }
     }
 }
     
     SignInfoService.$inject = ['$http', 'ThePath'];
     function SignInfoService($http, ThePath) {
     var service = this;
+    var usuario = {};
     service.signUpMenu = function (cat) {
         return $http.get(ThePath + '/menu_items/' + cat +'.json');
-    };   
+    };
+    
+    service.keepUser = function (usr) {
+        angular.copy(usr,[usuario]);
+    }
+
+    service.showUser = function (){
+        return usuario;
+    }
     }
     
     })();
