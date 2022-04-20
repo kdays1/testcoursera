@@ -38,7 +38,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Phone</label>
                 <div class="col-sm-10">
-                    <input type="text" name="phone" placeholder="Enter your phone" ng-model="ctrl.user.phone" style="color: black;" required size="10">
+                    <input type="text" name="phone" placeholder="Enter your phone" ng-model="ctrl.user.phone" style="color: black;" required minlenght="10">
                 </div>
             </div>
             <div ng-if="sign.phone.$invalid && sign.phone.$touched">
@@ -56,6 +56,7 @@
                 Submit!
             </button>
         </form>
+        <br>
         <p ng-if="ctrl.errorocurred==false && ctrl.initialize==false">This is your favorite meal: {{ctrl.user.result.name}}</p>
         <br>
         <span ng-if="ctrl.errorocurred">Please enter a valid menu item. HINT:Short Name</span>
