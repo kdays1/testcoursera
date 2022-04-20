@@ -3,40 +3,60 @@
 
     <div class="container">
         <form name="sign" novalidate>
-            <label>First Name</label>
-            <input type="text" name="firstname" placeholder="Enter your first name" ng-model="ctrl.user.fname" style="color: black;" required>{{ctrl.user.fname}}
-            <span
+            <div class="form-group row">
+                <label>First Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="firstname" placeholder="Enter your first name" ng-model="ctrl.user.fname" style="color: black;" required>
+                </div>
+            </div>
+            <div
             ng-if="sign.firstname.$error.required && sign.firstname.$touched">
             First name is required
-            </span>
-            <br>
-            <label>Last Name</label>
-            <input type="text" name="lastname" placeholder="Enter your last name" ng-model="ctrl.user.lname" style="color: black;" required>{{ctrl.user.lname}}
-            <span
+            </div>
+            
+            <div class="form-group row">
+                <label>Last Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="lastname" placeholder="Enter your last name" ng-model="ctrl.user.lname" style="color: black;" required>
+                </div>
+            </div>
+            <div
             ng-if="sign.lastname.$error.required && sign.lastname.$touched">
             Last name is required
-            </span>
-            <br>
-            <label>Email</label>
-            <input type="email" name="email" placeholder="Enter your email" ng-model="ctrl.user.email" style="color: black;" required>{{ctrl.user.email}}
-            <span ng-if="sign.email.$invalid && sign.email.$touched">
+            </div>
+            
+            <div class="form-group row">
+                <label>Email</label>
+                <div class="col-sm-10">
+                    <input type="email" name="email" placeholder="Enter your email" ng-model="ctrl.user.email" style="color: black;" required>
+                </div>
+            </div>
+            <div ng-if="sign.email.$invalid && sign.email.$touched">
                 The address should look like: name@domain.com 
-            </span>
-            <br>
-            <label>Phone</label>
-            <input type="text" name="phone" placeholder="Enter your phone" ng-model="ctrl.user.phone" style="color: black;" required size="10">
-            <span ng-if="sign.phone.$invalid && sign.phone.$touched">
+            </div>
+            
+            <div class="form-group row">
+                <label>Phone</label>
+                <div class="col-sm-10">
+                    <input type="text" name="phone" placeholder="Enter your phone" ng-model="ctrl.user.phone" style="color: black;" required size="10">
+                </div>
+            </div>
+            <div ng-if="sign.phone.$invalid && sign.phone.$touched">
                 Phone must have 10 digits.
-            </span>{{ctrl.user.phone}}
-            <br>
-            <label>Favorite Menu</label>
-            <input type="text" name="menu" placeholder="Enter your favorite menu" ng-model="ctrl.user.menu" style="color: black;" required>
+            </div>
+            
+            <div class="form-group row">
+                <label>Favorite Menu</label>
+                <div class="col-sm-10">
+                    <input type="text" name="menu" placeholder="Enter your favorite menu" ng-model="ctrl.user.menu" style="color: black;" required>
+                </div>
+            </div>
             <br>
             <button ng-disabled="sign.$invalid" ng-click="ctrl.submit()">
                 Submit!
             </button>
         </form>
-        <p ng-if="ctrl.errorocurred==false">This is your favorite meal: {{ctrl.user.result.name}}</p>
+        <p ng-if="ctrl.errorocurred==false && ctrl.initialize">This is your favorite meal: {{ctrl.user.result.name}}</p>
         <br>
         <span ng-if="ctrl.errorocurred">Please enter a valid menu item. HINT:Short Name</span>
     </div>
