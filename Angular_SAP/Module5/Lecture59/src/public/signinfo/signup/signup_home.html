@@ -56,7 +56,7 @@
                 Submit!
             </button>
         </form>
-        <p ng-if="ctrl.errorocurred==false && ctrl.initialize">This is your favorite meal: {{ctrl.user.result.name}}</p>
+        <p ng-if="ctrl.errorocurred==false && ctrl.initialize==false">This is your favorite meal: {{ctrl.user.result.name}}</p>
         <br>
         <span ng-if="ctrl.errorocurred">Please enter a valid menu item. HINT:Short Name</span>
     </div>
