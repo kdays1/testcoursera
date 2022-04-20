@@ -9,10 +9,10 @@
                     <input type="text" class="form-control" name="firstname" placeholder="Enter your first name" ng-model="ctrl.user.fname" style="color: black;" required>
                 </div>
             </div>
-            <span
+            <div
             ng-if="sign.firstname.$error.required && sign.firstname.$touched">
             First name is required
-            </span>
+            </div>
 
             <div class="form-group row">
                 <label for="inputEmail" class="col-sm-2 col-form-label">Last Name</label>
@@ -20,10 +20,10 @@
                     <input type="email" class="form-control" name="lastname" placeholder="Enter your last name" ng-model="ctrl.user.lname" style="color: black;" required>
                 </div>
             </div>
-            <span
+            <div
             ng-if="sign.lastname.$error.required && sign.lastname.$touched">
             Last name is required
-            </span>
+            </div>
 
             <div class="form-group row">
                 <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
@@ -31,9 +31,9 @@
                     <input type="email" class="form-control" name="email" placeholder="Enter your email" ng-model="ctrl.user.email" style="color: black;" required>
                 </div>
             </div>
-            <span ng-if="sign.email.$invalid && sign.email.$touched">
+            <div ng-if="sign.email.$invalid && sign.email.$touched">
                 The address should look like: name@domain.com 
-            </span>
+            </div>
 
             <div class="form-group row">
                 <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
@@ -41,9 +41,9 @@
                     <input type="tel" class="form-control" name="phone" placeholder="Enter your phone" ng-model="ctrl.user.phone" style="color: black;" required size="10">
                 </div>
             </div>
-            <span ng-if="sign.phone.$invalid && sign.phone.$touched">
+            <div ng-if="sign.phone.$invalid && sign.phone.$touched">
                 Phone must have 10 digits.
-            </span>
+            </div>
 
             <div class="form-group row">
                 <label for="inputName" class="col-sm-2 col-form-label">Favorite Menu</label>
