@@ -41,7 +41,7 @@
                     <input type="tel" class="form-control" name="phone" placeholder="Enter your phone" ng-model="ctrl.user.phone" style="color: black;" required minlenght="10" size="10">
                 </div>
             </div>
-            <div ng-if="sign.phone.$invalid && sign.phone.$touched">
+            <div ng-if="sign.phone.$error.required && sign.phone.$touched">
                 Phone must have 10 digits.
             </div>
 
