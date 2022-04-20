@@ -9,4 +9,5 @@ a,p,h2,li{
 
 .sel:hover{
     border: 2px solid black;
+    cursor: pointer
 }
